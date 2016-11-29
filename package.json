@@ -1,0 +1,19 @@
+{
+  "name": "kit-postulation-recipes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.canaima.softwarelibre.gob.ve/canaima-gnu-linux/kit-postulation.git"
+  },
+  "author": "Victor Pino",
+  "license": "ISC",
+  "bugs": {
+    "url": "http://gitlab.canaima.softwarelibre.gob.ve/canaima-gnu-linux/kit-postulation/issues"
+  },
+  "homepage": "http://gitlab.canaima.softwarelibre.gob.ve/canaima-gnu-linux/kit-postulation",
+  "dependencies": {
+    "bower": "^1.7.9"
+  }
+}

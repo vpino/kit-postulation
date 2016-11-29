@@ -1,0 +1,39 @@
+#!/bin/bash -e
+#
+# ==============================================================================
+# PAQUETE: canaima-servicios
+# ARCHIVO: prerm
+# DESCRIPCIÓN: Prepara el sistema para que el paquete sea removido.
+# COPYRIGHT:
+#  (C) 2015 Victor Pino <victopin0@gmail.com>
+# LICENCIA: GPL3
+# ==============================================================================
+#
+# Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
+# términos de la Licencia Pública General de GNU (versión 3).
+
+case ${1} in
+
+    remove|upgrade|deconfigure)
+	
+	#Detenemos los servicios de nginx y uwsgi para que la aplicacion pueda ser eliminada
+	service nginx stop || true
+	service uwsgi stop || true
+
+    ;;
+
+    failed-upgrade)
+
+    ;;
+
+    *)
+
+        echo "prerm no reconoce el argumento '"${1}"'" >&2
+        exit 1
+    ;;
+
+esac
+
+#DEBHELPER#
+
+exit 0

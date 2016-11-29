@@ -1,0 +1,141 @@
+<div class="row">
+    <div class="col s12 m12 l12" ng-include src="'/static/templates/layout/navbar.html'"></div>
+</div>
+
+<div class="row">
+
+	<form class="col s12" name="kprForm" novalidate role="form" ng-submit="vm.login(kprForm)" >
+
+		<div class="row">
+			<h1 class="col s12 m12 l4 push-l4"> Iniciar Sesion </h1>
+		</div>
+		
+
+		<div class="row"> 
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">email</i>
+				<input class="validate" ng-model="vm.email" name="email" type="email" required />
+				<label> Email </label>
+				
+				<div ng-show="kprForm.$submitted || kprForm.email.$touched">
+
+					<div class="card-panel" ng-show="kprForm.email.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El Email es requerido
+						 </p>
+
+					</div>
+
+					<div class="card-panel" ng-show="kprForm.email.$error.email">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El Email no es valido
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row"> 
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">vpn_key</i>
+				<input ng-model="vm.passwd" name="passwd" type="password" class="validate" required pattern="[ñáéíóúA-Za-z 0-9 .]+">
+				<label> Contraseña </label>
+				
+				<div ng-show="kprForm.$submitted || kprForm.passwd.$touched">
+
+					<div class="card-panel" ng-show="kprForm.passwd.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							La Contraseña es requeridad
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+		
+			<div ng-if="!!vm.error">
+			
+				<div class="card-panel col s12 m12 l4 push-l4">
+					
+					<p> 
+						<i class="medium material-icons waves-effect waves-light">
+							report_problem
+						</i>
+						{{vm.error}}
+					 </p>
+
+				</div>
+			
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col s12 m12 l4 push-l4"> 
+				
+				<br><br>
+				
+				<button type="submit" class="btn-floating blue" ng-disabled="kprForm.$invalid">
+					<i class="material-icons">
+					add
+					</i>
+					
+				</button>
+				Ingresar
+
+				<a href="/" class="btn-floating blue">
+					<i class="material-icons">
+					power_settings_new
+					</i>
+					
+				</a>
+
+				Cancelar
+
+
+				<br><br><br><br>
+
+				<div class="row">
+
+					<a href="/register/">
+						<i class="material-icons">
+						person_pin
+						</i>
+						¿ No tienes cuenta ? Registrate 
+					</a>
+
+				</div>
+
+						
+			</div>
+
+		</div>
+
+	</form>
+	
+</div>

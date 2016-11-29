@@ -1,0 +1,15 @@
+Source: kit-postulation
+Section: web
+Priority: standard
+Maintainer: Victor Pino <victopin0@gmail.com>
+Build-Depends: debhelper (>= 9.20150101), cdbs (>= 0.4.130), dh-virtualenv (>= 0.7), python-setuptools, libpq-dev, python-all-dev
+Standards-Version: 3.9.6
+Homepage: http://canaima.softwarelibre.gob.ve/
+
+Package: kit-postulation
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1), python2.7 | python2.6, ${misc:Pre-Depends}
+Depends: virtualenv, nginx, uwsgi, uwsgi-plugin-python, python-setuptools, ${misc:Depends}
+Description: Servicio to post recipes
+ kit-postulation es una aplicacion hecha en django
+ la cual te permite gestionar las recetas de kit-servicios.

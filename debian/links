@@ -1,0 +1,2 @@
+/etc/nginx/sites-available/kit-postulation.nginx.conf /etc/nginx/sites-enabled/kit-postulation.nginx.conf
+/etc/uwsgi/apps-available/kit-postulation.uwsgi.ini /etc/uwsgi/apps-enabled/kit-postulation.uwsgi.ini

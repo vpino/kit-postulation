@@ -1,0 +1,41 @@
+#!/bin/bash -e
+#
+# ==============================================================================
+# PAQUETE: kit-postulation
+# ARCHIVO: postinst
+# DESCRIPCIÓN: Configura el sistema despues la instalación del paquete.
+# COPYRIGHT:
+#  (C) 2015 Victor Pino <victopin0@gmail.com>
+# LICENCIA: GPL3
+# ==============================================================================
+#
+# Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
+# términos de la Licencia Pública General de GNU (versión 3).
+
+case ${1} in
+
+    configure)
+	
+	#Luego que se instala la aplicacion se reinician el nginx y uwsgi
+	service nginx restart || true 
+	service uwsgi restart || true 
+
+
+    ;;
+
+        abort-upgrade|abort-remove|abort-deconfigure)
+
+        ;;
+
+        *)
+
+                echo "postinst no reconoce el argumento '"${1}"'" >&2
+                exit 1
+
+        ;;
+
+esac
+
+#DEBHELPER#
+
+exit 0

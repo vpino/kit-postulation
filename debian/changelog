@@ -1,0 +1,16 @@
+kit-postulation (0.1.1) stable; urgency=medium
+
+  [ Victor Pino ]
+  * [60240a7] fix(debian) Update the struct of files to build a .deb.
+    Add MANIFEST.in file
+    Update nginx.conf
+    Update requirements.txt
+    Fix system grid of login template
+
+ -- Victor Pino <victopin0@gmail.com>  Tue, 27 Sep 2016 15:30:52 -0400
+
+kit-postulation (0.1) stable; urgency=medium
+
+  * Debianizando el proyecto
+
+ -- Victor Pino  <victopin0@gmail.com>  Fri, 23 Sep 2016 16:30:36 -0400

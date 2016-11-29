@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="col s12 m12 l12" ng-include src="'/static/templates/layout/navbar.html'"></div>
+</div>
+
+<div class="row">
+
+	<form class="col s12" name="kprForm" novalidate role="form" ng-submit="vm.submit(kprForm)" >
+
+		<div class="row">
+			<h1 class="col s12 m12 l4 push-l4"> Propuesta </h1>
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">account_circle</i>
+				<input class="validate"  name="repository" type="text" ng-model="vm.repository" required>
+				<label> Url del Repositorio </label>
+
+				<div ng-show="kprForm.$submitted || kprForm.repository.$touched">
+
+					<div class="card-panel" ng-show="kprForm.repository.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							La url del repositorio es requerida
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">description</i>
+				<input class="validate" ng-model="vm.name" name="name" type="text" required />
+				<label> Nombre de la Receta </label>
+				
+				<div ng-show="kprForm.$submitted || kprForm.name.$touched">
+
+					<div class="card-panel" ng-show="kprForm.name.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El nombre de la receta es requerida
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+				<i class="material-icons prefix">comment</i>
+	        	<textarea class="materialize-textarea validate" ng-model="vm.description" name="description" required></textarea>
+	        	<label for="textarea1">Descripción</label>
+
+	        	<div ng-show="kprForm.$submitted || kprForm.description.$touched">
+
+					<div class="card-panel" ng-show="kprForm.description.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							La descripción es requerida
+						 </p>
+
+					</div>
+				
+				</div>
+
+	        </div>
+
+	    </div>
+
+		
+
+		<div ng-if="!!vm.success">
+		
+			<div class="card-panel col s12 m12 l4 push-l4">
+				
+				<p> 
+					<i class="medium material-icons waves-effect waves-light">
+						thumb_up
+					</i>
+					{{vm.success}}
+				 </p>
+
+			</div>
+		
+		</div>
+
+		<div ng-if="!!vm.error">
+		
+			<div class="card-panel col s12 m12 l4 push-l4">
+				
+				<p> 
+					<i class="medium material-icons waves-effect waves-light">
+						report_problem
+					</i>
+					{{vm.error}}
+				 </p>
+
+			</div>
+		
+		</div>
+
+		<div class="row">
+			
+			<div class="col s12 m12 l4 push-l4"> 
+				
+				<br><br>
+
+				<div class="fixed-action-btn horizontal right-align" style="position: relative;">
+					
+					<a href="#!" class="btn-floating btn-large waves-light">
+						<i class="large material-icons">menu</i>
+					</a>
+
+					<ul>
+						
+						<li>
+
+							<button type="submit" class="btn-floating blue" ng-disabled="kprForm.$invalid">
+								<i class="material-icons">
+								note_add
+								</i>
+							</button>
+
+							Agregar
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</form>
+	
+</div>

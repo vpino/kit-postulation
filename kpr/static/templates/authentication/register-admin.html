@@ -1,0 +1,184 @@
+<div class="row">
+    <div class="col s12 m12 l12" ng-include src="'/static/templates/layout/navbar.html'"></div>
+</div>
+
+<div class="row">
+
+	<form class="col s12" name="kprForm" novalidate role="form" ng-submit="vm.register(kprForm)" >
+
+		<div class="row">
+			<h1 class="col s12 m12 l4 push-l4"> User Register </h1>
+		</div>
+		
+		<div class="row"> 
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">account_circle</i>
+				<input class="validate"  name="username" type="text" ng-model="vm.username" pattern="[ñáéíóúA-Za-z ]+" required>
+				<label> Nombre Usuario </label>
+
+				<div ng-show="kprForm.$submitted || kprForm.username.$touched">
+
+					<div class="card-panel" ng-show="kprForm.username.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El Nombre Usuario es requerido
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">email</i>
+				<input class="validate" ng-model="vm.email" name="email" type="email" required />
+				<label> Email </label>
+				
+				<div ng-show="kprForm.$submitted || kprForm.email.$touched">
+
+					<div class="card-panel" ng-show="kprForm.email.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El Email is requerido
+						 </p>
+
+					</div>
+
+					<div class="card-panel" ng-show="kprForm.email.$error.email">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							El Email no es valido
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+								
+				<i class="material-icons prefix">vpn_key</i>
+				<input ng-model="vm.passwd" name="passwd" type="password" class="validate" required pattern="[ñáéíóúA-Za-z 0-9 .]+">
+				<label> Contraseña </label>
+				
+				<div ng-show="kprForm.$submitted || kprForm.passwd.$touched">
+
+					<div class="card-panel" ng-show="kprForm.passwd.$error.required">
+				
+						<p> 
+							<i class="medium material-icons waves-effect waves-light">
+								report_problem
+							</i>
+							La Contraseña es required
+						 </p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="input-field col s12 m12 l4 push-l4">
+
+				<p>
+			      <input type="checkbox" id="admin" ng-model="vm.admin" checked="checked" disabled="disabled"/>
+			      <label for="admin">Admin</label>
+		    	</p>
+		    	
+		    </div>
+
+	    </div>
+
+
+		<div ng-if="!!vm.success">
+		
+			<div class="card-panel col s12 m12 l4 push-l4">
+				
+				<p> 
+					<i class="medium material-icons waves-effect waves-light">
+						thumb_up
+					</i>
+					{{vm.success}}
+				 </p>
+
+			</div>
+		
+		</div>
+
+		<div ng-if="!!vm.error">
+		
+			<div class="card-panel col s12 m12 l4 push-l4">
+				
+				<p> 
+					<i class="medium material-icons waves-effect waves-light">
+						report_problem
+					</i>
+					{{vm.error}}
+				 </p>
+
+			</div>
+		
+		</div>
+
+		<div class="row">
+
+			<div class="col s12 m12 l4 push-l4"> 
+				
+				<br><br>
+
+				<div class="fixed-action-btn horizontal right-align" style="position: relative;">
+					
+					<a href="#!" class="btn-floating btn-large waves-light">
+						<i class="large material-icons">menu</i>
+					</a>
+
+					<ul>
+						
+						<li>
+
+							<button type="submit" class="btn-floating red" ng-disabled="kprForm.$invalid">
+								<i class="material-icons">
+								note_add
+								</i>
+							</button>
+							Registrar
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</form>
+	
+</div>
